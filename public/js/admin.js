@@ -21,8 +21,8 @@ socket.on("admin_list_all_users", (connections) => {
 function call(id) { // função para abertura de chat para que o admin acesse e responda mensagens recebidas
 
     const connection = usersConnections.find(
-        (connection) => connection.socket_id === id
-    );
+        connection => connection.socket_id === id
+    )
 
     const template = document.getElementById("admin_template").innerHTML;
 
@@ -40,10 +40,8 @@ function call(id) { // função para abertura de chat para que o admin acesse e 
     socket.emit("admin_list_messages_by_user", params, (messages) => {
         const divMessages = document.getElementById(`allMessages${connection.user_id}`);
 
-
         messages.forEach((message) => {
             const createDiv = document.createElement("div");
-
 
             if (message.admin_id === null) {
                 createDiv.className = "admin_message_client";
