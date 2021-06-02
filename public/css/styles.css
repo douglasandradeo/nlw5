@@ -277,3 +277,20 @@ input[type="text"]:focus {
 .btn_send:hover {
   opacity: 0.8
 }
+
+.admin_message_client {
+  background:#8d7aef;
+  color: #fff;
+  font-size: 17px;
+  padding: 10px;
+  margin: 20px;
+  margin-right: 500px;
+  border-radius: 10px;
+}
+
+#allMessages {
+  color: black;
+  background-color: #8257e6;
+  font-size: 17px;
+  border: black
+}

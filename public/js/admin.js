@@ -63,3 +63,14 @@ function call(id) { // função para abertura de chat para que o admin acesse e 
     // 41:40 continuação
 }
 
+function sendMessage(id) {
+    const text = document.getElementById(`send_message_${id}`);
+
+    const params = {
+        text: text.nodeValue,
+        user_id: id
+    }
+
+    socket.emit("admin_send_message", params)
+}
+
