@@ -19,13 +19,13 @@ io.on("connect", async (socket) => {
     })
 
     socket.on("admin_send_message", async (params) => {
-        const { user_id, text } = params
+        const { user_id, text } = params;
 
         await messagesService.create({
             text,
             user_id,
             admin_id: socket.id
-        })
+        });
         
         const { socket_id } = await connectionsService.findByUserId(user_id)
 
@@ -34,5 +34,4 @@ io.on("connect", async (socket) => {
             socket_id: socket.id
         })
     })
-
 })
